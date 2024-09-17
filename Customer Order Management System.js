@@ -10,5 +10,24 @@ let inventory = [
       { name: 'Mocha', price: 5, quantity: 4 }
     
     ];
+// Task 2 Create an Orders Array of Order Objects:
 
-    
+ let customerOrders = []
+ 
+ // I would push a sample order as order number 1 in customer order with the name, items and status:
+
+ let customerOrder1 = {
+    customerName: "Raiyan Zakir",
+    items: [
+        {name: "Mocha", quantity: 2},
+        {name: "Latte", quantity: 3}
+    ],
+    status: "Pending"
+ };
+ // Will log the information after using push formula to see it works or not.
+  
+ customerOrders.push(customerOrder1);
+ console.log(customerOrders);
+ 
+ // output customerName: 'Raiyan Zakir', items: Array(2), status: 'Pending'
+
