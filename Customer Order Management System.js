@@ -27,7 +27,8 @@ let item = inventory.find (item=> item.name === orderedItem.name);
 
 // Next to check if we have the product or we have enough in stock
 
-        if (item === null) {
+        if (!item)  // Output: false (negates the boolean value)
+        {
             console.log(`Error: ${orderedItem.name} Item is not found in inventory.`);
             return; 
             // It will Stop processing if item is not found
@@ -94,6 +95,24 @@ console.log(customerOrders);
 //items {name: 'Mocha', quantity: 10}
 //status " Pending "
 // output Error: Mocha is out of stock.
+
+// Task 4: Function to Calculate Total For an order 
+
+function calculateTotalOrder(order) {
+    return order.items.reduce(( total, orderedItem) => {
+        let item = inventory.find(item => item.name === orderedItem.name);
+    //after we find the item we will multiply the total order with the price 
+   if (item) {
+    total += item.price * orderedItem.quantity;
+   }
+// after that i want it to return the updated total for the ordereditems 
+return total;
+ }, 0 ); 
+ }
+ let order1Total = calculateTotalOrder(customerOrders[0]); // Calculates total for the first order
+ console.log(`Total order value for ${customerOrders[0].customerName}: $${order1Total}`);
+
+// output Total order price for Raiyan zakir is $12
 
 
 
