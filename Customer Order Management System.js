@@ -114,7 +114,21 @@ return total;
 
 // output Total order price for Raiyan zakir is $12
 
+// Task 5 Create a Function to Mark an Order as Completed
 
 
+function completeOrder (customerName) {
+    let order = customerOrders.find (order=> order.customerName === customerName);
+if (order) {
+    orderStatus = "completed"
+    console.log (`Order for customer ${customerName} is completed`);
+} else {
+    console.log (`No Order was found for customer ${customerName}`);
+}
+}
+
+completeOrder(customerName1); // output Order for customer Raiyan Zakir is completed
+completeOrder (customerName2); // No Order was found for customer Shrabasty Habil
+console.log (customerOrders);
 
 
