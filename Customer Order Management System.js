@@ -132,3 +132,15 @@ completeOrder (customerName2); // No Order was found for customer Shrabasty Habi
 console.log (customerOrders);
 
 
+// Task 6- Create a function to check pending orders: 
+function checkPendingOrders(orders){
+    let pendingOrders = orders.forEach(order => {
+    
+        if (order.status === 'Pending'){
+            return order;
+        }
+    });
+}
+
+console.log(checkPendingOrders(orders))
+
